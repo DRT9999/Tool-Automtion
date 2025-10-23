@@ -6,3 +6,21 @@
     $ vault version  ( check the verison and to validate the installation of valut )
     $ vault server -help
     $ vault server -config=/opt/vault.hcl                    # Start a server with a configuration file
+
+$sudo vim/opt/vault.hcl
+ui = true
+storage "file" {
+  path = "/vault-data"
+}
+listener "tcp" {
+ address     = "0.0.0.0:8200"
+ tls_disable = 1
+}
+ systemctl start vault
+
+Initial root token
+hvs.OVczX8fq9DLqX8Zq4Ym7I1RS
+
+
+Key 1
+sxgJjG0pcld5HOPWv11oVxw6Epyk6GMhVjbiZUdsDfk=
