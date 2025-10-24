@@ -17,10 +17,3 @@ listener "tcp" {
  tls_disable = 1
 }
  systemctl start vault
-
-% Initial root token
-% hvs.OVczX8fq9DLqX8Zq4Ym7I1RS
-
-
-% Key 1
-% sxgJjG0pcld5HOPWv11oVxw6Epyk6GMhVjbiZUdsDfk=
