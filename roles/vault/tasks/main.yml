@@ -1,5 +1,8 @@
 #Ansible
 
+- name: config name to Server vault
+  ansible.builtin.shell: set-hostname vault
+
 - name: config yum for Hashicorp vault
   ansible.builtin.shell: yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 
