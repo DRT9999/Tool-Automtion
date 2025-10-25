@@ -1,6 +1,6 @@
 - name: Configuging Expense App
   become: true
-  hosts: all #"{{COMP}}"
+  hosts: localhost #"{{COMP}}"
   roles:
     - role: "{{ tool-name }}"
 
