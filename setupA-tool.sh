@@ -1,1 +1,1 @@
-ansible-playbook -i  ${tool-name}.exp.in, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e tool-name= vault -e pwd=ExpenseApp@1 setup-tool.yml
+ansible-playbook -i ${tool-name}.exp.in, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e tool-name= vault -e pwd=ExpenseApp@1 setup-tool.yml
