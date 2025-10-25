@@ -2,6 +2,6 @@
   become: true
   hosts: all #"{{COMP}}"
   roles:
-    - role: "{{COMP}}"
+    - role: "{{tool-name}}"
 
  
