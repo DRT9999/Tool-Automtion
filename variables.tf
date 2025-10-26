@@ -7,6 +7,11 @@ variable "tool" {
             instance_type = "t2.micro"
             port_no =8200
         }
+        vault  ={
+            name = "prometheus"
+            instance_type = "t2.micro"
+            port_no =9090 
+        }
     }
   
 }
