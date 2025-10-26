@@ -3,5 +3,3 @@
   hosts: all #"{{COMP}}"
   roles:
     - role: "{{ tool_name }}"
-
- 
