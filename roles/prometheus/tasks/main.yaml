@@ -1,5 +1,5 @@
-- name: Configuring  the prometheus Host name 
-  ansible.builtin.shell: set-hostname prometheus #{{tool_name}} && ls -ltr /opt/prometheus-2.54.1.linux-amd64/prometheus.yml
+- name: Configuring  the prometheus Host name
+  ansible.builtin.shell: set-hostname {{tool_name}} && ls -ltr /opt/prometheus-2.54.1.linux-amd64/prometheus.yml
 
 - name: Creating {{app_user}}
   ansible.builtin.user:
@@ -10,24 +10,24 @@
     src: https://github.com/prometheus/prometheus/releases/download/v2.54.1/prometheus-2.54.1.linux-amd64.tar.gz
     dest: /opt
     remote_src: yes
-    owner: "{{app_user}}" 
-    group: "{{app_user}}" 
+    owner: "{{app_user}}"
+    group: "{{app_user}}"
 
 - name: Copying The Config File
   ansible.builtin.template:
-    src: prometheus.yml 
+    src: prometheus.yml
     dest: /opt/prometheus-2.54.1.linux-amd64/prometheus.yml
-    owner: "{{app_user}}" 
-    group: "{{app_user}}" 
+    owner: "{{app_user}}"
+    group: "{{app_user}}"
 
-- name: Copying Systemd file 
+- name: Copying Systemd file
   ansible.builtin.template:
     src: prometheus.service
     dest: /etc/systemd/system/prometheus.service
 
-- name: Restarting {{app_user}} serivce 
+- name: Restarting {{app_user}} serivce
   ansible.builtin.systemd_service:
-    name: "{{app_user}}" 
+    name: "{{app_user}}"
     state: restarted
     enabled: true
     daemon_reload: true
